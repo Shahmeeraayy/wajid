@@ -1,0 +1,1195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>UK Tailoring — Bespoke London</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+  :root {
+    --ivory: #f3ece0;
+    --paper: #faf6ee;
+    --ink: #1a1714;
+    --ink-2: #2a2622;
+    --rule: #d8cdb9;
+    --mute: #7a7065;
+    --gold: #a8854a;
+    --gold-deep: #8a6a36;
+    --burgundy: #5a1f24;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--paper); color: var(--ink); -webkit-font-smoothing: antialiased; }
+  body {
+    font-family: "DM Sans", system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+
+  .serif { font-family: "Cormorant Garamond", "Times New Roman", serif; font-weight: 400; letter-spacing: -0.01em; }
+  .eyebrow {
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--mute);
+    font-weight: 500;
+  }
+  .gold { color: var(--gold-deep); }
+  .container { max-width: 1280px; margin: 0 auto; padding: 0 48px; }
+  .rule { height: 1px; background: var(--rule); border: 0; }
+
+  /* ===== Announcement bar ===== */
+  .announce {
+    background: var(--ink);
+    color: #e8dfcf;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px 16px;
+  }
+  .announce span { opacity: 0.7; margin: 0 14px; }
+  .announce strong { font-weight: 500; color: #f0e6d4; }
+
+  /* ===== Nav ===== */
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 26px 48px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+    position: sticky; top: 0; z-index: 50;
+  }
+  .brand {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: 0.18em;
+    line-height: 1;
+  }
+  .brand .amp { color: var(--gold-deep); font-style: italic; font-weight: 400; }
+  .brand-sub {
+    font-size: 9px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--mute);
+    margin-top: 4px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 38px;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+  }
+  .nav-links a { position: relative; padding: 4px 0; }
+  .nav-links a:hover { color: var(--gold-deep); }
+  .nav-cta {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    transition: all 0.2s ease;
+  }
+  .nav-cta:hover { background: var(--ink); color: var(--paper); }
+
+  /* ===== Hero ===== */
+  .hero {
+    padding: 96px 0 120px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .hero h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 300;
+    font-size: clamp(56px, 7vw, 104px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--gold-deep);
+  }
+  .hero h1 .thin { font-weight: 300; }
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .hero-meta .dot { width: 6px; height: 6px; background: var(--gold-deep); border-radius: 50%; }
+  .hero p.lede {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--ink-2);
+    max-width: 480px;
+    margin-top: 36px;
+    font-weight: 300;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 44px;
+    align-items: center;
+  }
+  .btn {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 18px 28px;
+    border: 1px solid var(--ink);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--ink);
+  }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .btn-primary:hover { background: var(--burgundy); border-color: var(--burgundy); }
+  .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+  .btn .arrow { transition: transform 0.2s ease; }
+  .btn:hover .arrow { transform: translateX(4px); }
+
+  .hero-figure {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    background: #2a2622;
+  }
+  .hero-figure image-slot {
+    width: 100%; height: 100%;
+  }
+  .hero-caption {
+    position: absolute;
+    bottom: -1px; left: -32px;
+    background: var(--paper);
+    padding: 20px 28px 0 0;
+    max-width: 280px;
+  }
+  .hero-caption .num {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 64px;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .hero-caption .label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mute);
+    margin-top: 6px;
+  }
+  .hero-badge {
+    position: absolute;
+    top: 32px; right: 32px;
+    width: 130px; height: 130px;
+    border-radius: 50%;
+    background: rgba(243, 236, 224, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--ink);
+    border: 1px solid var(--gold);
+  }
+  .hero-badge .inner {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.3;
+  }
+  .hero-badge .inner strong {
+    display: block;
+    font-family: "DM Sans", sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    font-weight: 600;
+    margin-top: 4px;
+  }
+
+  /* ===== Trust strip ===== */
+  .trust {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 28px 0;
+    background: var(--ivory);
+  }
+  .trust-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px;
+    align-items: center;
+  }
+  .trust-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 8px;
+    border-left: 1px solid var(--rule);
+    padding-left: 24px;
+  }
+  .trust-item:first-child { border-left: 0; padding-left: 0; }
+  .trust-item .big {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .trust-item .lbl {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mute);
+    margin-top: 8px;
+  }
+
+  /* ===== Section heading ===== */
+  .section { padding: 120px 0; }
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 64px;
+    gap: 64px;
+  }
+  .section-head h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 300;
+    font-size: clamp(40px, 4.4vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    max-width: 640px;
+  }
+  .section-head h2 em { font-style: italic; color: var(--gold-deep); font-weight: 400; }
+  .section-head .right {
+    max-width: 360px;
+    color: var(--ink-2);
+    font-size: 15px;
+    line-height: 1.65;
+    font-weight: 300;
+  }
+  .section-head .right .eyebrow { margin-bottom: 12px; display: block; }
+
+  /* ===== Craft cards ===== */
+  .craft-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .craft-card { position: relative; }
+  .craft-card .slot {
+    aspect-ratio: 3 / 4;
+    background: #1f1c18;
+    position: relative;
+    overflow: hidden;
+  }
+  .craft-card .slot image-slot { width: 100%; height: 100%; }
+  .craft-card .tag {
+    position: absolute;
+    top: 16px; left: 16px;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    padding: 7px 12px;
+    font-weight: 500;
+    z-index: 2;
+  }
+  .craft-card h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
+    font-size: 28px;
+    margin-top: 24px;
+    line-height: 1.1;
+  }
+  .craft-card p {
+    color: var(--mute);
+    font-size: 14px;
+    margin-top: 8px;
+    max-width: 320px;
+  }
+  .craft-card .meta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+  }
+  .craft-card .meta .price { font-family: "Cormorant Garamond", serif; text-transform: none; letter-spacing: 0; font-size: 16px; color: var(--ink); }
+
+  /* ===== Process ===== */
+  .process { background: var(--ink); color: var(--paper); padding: 140px 0; }
+  .process .container { color: var(--paper); }
+  .process .eyebrow { color: var(--gold); }
+  .process h2 { color: var(--paper); }
+  .process .right { color: #c8bfae; }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 40px;
+  }
+  .step {
+    padding: 40px 32px 40px 0;
+    border-left: 1px solid #3a342b;
+    padding-left: 32px;
+    position: relative;
+  }
+  .step:first-child { padding-left: 0; border-left: 0; }
+  .step .n {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--gold);
+    font-weight: 400;
+  }
+  .step h4 {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
+    font-size: 30px;
+    margin-top: 24px;
+    line-height: 1.15;
+  }
+  .step p {
+    color: #b8af9e;
+    font-size: 14px;
+    line-height: 1.65;
+    margin-top: 14px;
+    font-weight: 300;
+  }
+  .step .time {
+    margin-top: 20px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ===== Services ===== */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--rule);
+  }
+  .svc {
+    grid-column: span 4;
+    padding: 40px 32px;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    cursor: pointer;
+    transition: background 0.25s ease;
+    position: relative;
+  }
+  .svc:nth-child(3n) { border-right: 0; }
+  .svc:hover { background: var(--ivory); }
+  .svc .num {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--gold-deep);
+    font-size: 14px;
+  }
+  .svc h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
+    font-size: 36px;
+    margin-top: 32px;
+    line-height: 1.05;
+  }
+  .svc p {
+    color: var(--mute);
+    font-size: 14px;
+    margin-top: 14px;
+    line-height: 1.6;
+    max-width: 340px;
+  }
+  .svc .more {
+    margin-top: 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 4px;
+  }
+  .svc .from {
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mute);
+  }
+  .svc .from b { font-family: "Cormorant Garamond", serif; color: var(--ink); font-size: 18px; text-transform: none; letter-spacing: 0; font-weight: 400; }
+
+  /* ===== Fabric library ===== */
+  .fabrics {
+    background: var(--ivory);
+    padding: 120px 0;
+  }
+  .fabric-strip {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 14px;
+    margin-top: 56px;
+  }
+  .swatch {
+    aspect-ratio: 1;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .swatch:hover { transform: translateY(-4px); }
+  .swatch::after {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      repeating-linear-gradient(45deg, rgba(0,0,0,0.06) 0 1px, transparent 1px 4px),
+      repeating-linear-gradient(-45deg, rgba(255,255,255,0.04) 0 1px, transparent 1px 6px);
+    pointer-events: none;
+  }
+  .swatch span {
+    position: absolute;
+    bottom: 8px; left: 8px; right: 8px;
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+    font-weight: 500;
+  }
+  .swatch.light span { color: rgba(0,0,0,0.65); }
+
+  .fabric-foot {
+    margin-top: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+  }
+  .fabric-foot .mills {
+    display: flex;
+    gap: 40px;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink-2);
+  }
+  .fabric-foot .mills span { opacity: 0.6; }
+
+  /* ===== Testimonials ===== */
+  .testimonials { padding: 140px 0; }
+  .testi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+  .testi {
+    border-top: 1px solid var(--rule);
+    padding-top: 40px;
+  }
+  .testi .stars {
+    color: var(--gold-deep);
+    letter-spacing: 4px;
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  .testi blockquote {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 26px;
+    line-height: 1.4;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+  .testi blockquote::before { content: '"'; color: var(--gold-deep); }
+  .testi blockquote::after { content: '"'; color: var(--gold-deep); }
+  .testi cite {
+    display: block;
+    margin-top: 24px;
+    font-style: normal;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mute);
+  }
+  .testi cite b { color: var(--ink); font-weight: 500; }
+
+  /* ===== Visit / Booking ===== */
+  .visit {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 140px 0;
+  }
+  .visit-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    align-items: flex-start;
+  }
+  .visit h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 300;
+    font-size: clamp(44px, 5vw, 72px);
+    line-height: 1;
+    letter-spacing: -0.015em;
+  }
+  .visit h2 em { color: var(--gold); font-style: italic; }
+  .visit .lede {
+    color: #c8bfae;
+    font-size: 17px;
+    line-height: 1.6;
+    margin-top: 28px;
+    max-width: 460px;
+    font-weight: 300;
+  }
+  .visit-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 48px;
+    margin-top: 56px;
+  }
+  .vd .lbl {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .vd .val {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 22px;
+    line-height: 1.3;
+    font-weight: 400;
+  }
+  .vd .val a:hover { color: var(--gold); }
+  .vd .val span { display: block; color: #b8af9e; font-size: 15px; }
+
+  .book-card {
+    background: var(--paper);
+    color: var(--ink);
+    padding: 44px 40px;
+    position: relative;
+  }
+  .book-card::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px; right: -1px;
+    height: 1px; background: var(--gold);
+  }
+  .book-card .eyebrow { color: var(--gold-deep); }
+  .book-card h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 1.1;
+    margin-top: 14px;
+  }
+  .book-card p {
+    color: var(--mute);
+    font-size: 14px;
+    margin-top: 12px;
+    line-height: 1.6;
+  }
+  .form {
+    margin-top: 28px;
+    display: grid;
+    gap: 14px;
+  }
+  .field {
+    border-bottom: 1px solid var(--rule);
+    padding: 14px 0 10px;
+  }
+  .field label {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--mute);
+    display: block;
+  }
+  .field input, .field select {
+    border: 0; background: transparent; outline: none;
+    width: 100%; padding: 6px 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px;
+    color: var(--ink);
+  }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .book-card .btn { width: 100%; justify-content: center; margin-top: 16px; }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: #0e0c0a;
+    color: #a8a092;
+    padding: 80px 0 40px;
+    font-size: 13px;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 56px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid #2a251f;
+  }
+  .footer .brand-big {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--paper);
+    letter-spacing: 0.08em;
+  }
+  .footer .brand-big .amp { color: var(--gold); font-style: italic; }
+  .footer p { margin-top: 16px; max-width: 340px; line-height: 1.65; }
+  .footer h5 {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 18px;
+  }
+  .footer ul { list-style: none; display: grid; gap: 10px; }
+  .footer ul a:hover { color: var(--paper); }
+  .footer-bot {
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: #6a6359;
+  }
+
+  /* Swatch color helpers */
+  .c-midnight { background: linear-gradient(135deg, #1a2238 0%, #0f1626 100%); }
+  .c-charcoal { background: linear-gradient(135deg, #2a2a2a 0%, #1c1c1c 100%); }
+  .c-pinstripe { background:
+    repeating-linear-gradient(0deg, #1f2536 0 6px, #2a3149 6px 7px); }
+  .c-navy { background: linear-gradient(135deg, #1d2c4d 0%, #14213e 100%); }
+  .c-windowpane { background:
+    linear-gradient(0deg, transparent 49%, rgba(184,148,95,0.4) 49% 51%, transparent 51%),
+    linear-gradient(90deg, transparent 49%, rgba(184,148,95,0.4) 49% 51%, transparent 51%),
+    #2c3142;
+    background-size: 24px 24px, 24px 24px, 100% 100%; }
+  .c-chalk { background:
+    repeating-linear-gradient(0deg, #20283d 0 7px, rgba(255,255,255,0.25) 7px 8px, #20283d 8px 14px); }
+  .c-tweed { background:
+    repeating-linear-gradient(45deg, #3a3326 0 2px, #5a4d36 2px 4px, #2a2418 4px 6px); }
+  .c-houndstooth { background:
+    conic-gradient(from 45deg at 25% 25%, #1a1a1a 0 25%, #d8cdb9 0 50%, #1a1a1a 0 75%, #d8cdb9 0);
+    background-size: 16px 16px; }
+  .c-cream { background: linear-gradient(135deg, #e8dcc4 0%, #d4c4a2 100%); }
+  .c-bottle { background: linear-gradient(135deg, #1f3a2b 0%, #14271e 100%); }
+  .c-burgundy { background: linear-gradient(135deg, #4a1822 0%, #2e0d14 100%); }
+
+  /* default image slot styling */
+  image-slot {
+    --is-bg: #2a2622;
+    --is-fg: #8a7e6a;
+  }
+</style>
+</head>
+<body>
+
+<!-- Announcement -->
+<div class="announce">
+  <strong>By Appointment</strong> <span>·</span> Mayfair Atelier <span>·</span> Now Booking Spring 2026 Commissions
+</div>
+
+<!-- Nav -->
+<nav class="nav">
+  <div>
+    <div class="brand">U<span class="amp">·</span>K TAILORING</div>
+    <div class="brand-sub">Bespoke · Est. London</div>
+  </div>
+  <div class="nav-links">
+    <a href="#bespoke">Bespoke</a>
+    <a href="#process">The Cut</a>
+    <a href="#services">Services</a>
+    <a href="#cloth">Cloth</a>
+    <a href="#visit">Visit</a>
+  </div>
+  <a href="#visit" class="nav-cta">Book Fitting</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-meta">
+          <span class="dot"></span>
+          <span class="eyebrow">A London House — Cutting since 2014</span>
+        </div>
+        <h1>
+          Cut for the<br>
+          <em>man who knows.</em>
+        </h1>
+        <p class="lede">
+          A private tailoring house in the heart of London. Twelve weeks. Three fittings. One garment cut entirely to your line, in cloth woven by the mills of Huddersfield and Biella.
+        </p>
+        <div class="hero-actions">
+          <a href="#visit" class="btn btn-primary">Book a Consultation <span class="arrow">→</span></a>
+          <a href="#bespoke" class="btn btn-ghost">View the Craft</a>
+        </div>
+      </div>
+
+      <div class="hero-figure">
+        <image-slot id="hero-main" shape="rect" placeholder="Drop a hero image — three-piece suit on form, atelier light"></image-slot>
+        <div class="hero-badge">
+          <div class="inner">
+            Cut by hand<br>in Mayfair
+            <strong>Since '14</strong>
+          </div>
+        </div>
+        <div class="hero-caption">
+          <div class="num">12<span style="font-style: italic; color: var(--gold-deep);">wks</span></div>
+          <div class="label">Avg. commission lead time</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust strip -->
+<section class="trust">
+  <div class="container">
+    <div class="trust-row">
+      <div class="trust-item">
+        <div class="big">280+</div>
+        <div class="lbl">Commissions Delivered</div>
+      </div>
+      <div class="trust-item">
+        <div class="big">4.9 ★</div>
+        <div class="lbl">Across 134 Reviews</div>
+      </div>
+      <div class="trust-item">
+        <div class="big">11 yrs</div>
+        <div class="lbl">In Practice</div>
+      </div>
+      <div class="trust-item">
+        <div class="big">3 fittings</div>
+        <div class="lbl">Included as Standard</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bespoke / Craft -->
+<section class="section" id="bespoke">
+  <div class="container">
+    <div class="section-head">
+      <h2>The garments we are<br><em>most proud</em> to make.</h2>
+      <div class="right">
+        <span class="eyebrow">Selected Work</span>
+        Each piece is cut from a paper pattern drafted exclusively for one client. No grading, no shortcuts — a single hand from chalk to canvas.
+      </div>
+    </div>
+
+    <div class="craft-grid">
+
+      <div class="craft-card">
+        <div class="slot">
+          <span class="tag">Two-Piece</span>
+          <image-slot id="craft-1" shape="rect" placeholder="Navy two-piece suit — front"></image-slot>
+        </div>
+        <h3>The Mayfair Two-Piece</h3>
+        <p>Single-breasted, soft-shoulder, hand-padded lapel in a 9oz worsted by Holland &amp; Sherry.</p>
+        <div class="meta">
+          <span>Bespoke · 12 weeks</span>
+          <span class="price">from £2,850</span>
+        </div>
+      </div>
+
+      <div class="craft-card">
+        <div class="slot">
+          <span class="tag">Three-Piece</span>
+          <image-slot id="craft-2" shape="rect" placeholder="Three-piece tweed — full"></image-slot>
+        </div>
+        <h3>The Country Three-Piece</h3>
+        <p>Estate tweed, peaked lapel, six-button waistcoat. A garment that warms to its wearer.</p>
+        <div class="meta">
+          <span>Bespoke · 14 weeks</span>
+          <span class="price">from £3,400</span>
+        </div>
+      </div>
+
+      <div class="craft-card">
+        <div class="slot">
+          <span class="tag">Black Tie</span>
+          <image-slot id="craft-3" shape="rect" placeholder="Dinner suit — close detail of grosgrain lapel"></image-slot>
+        </div>
+        <h3>The Evening Dinner Suit</h3>
+        <p>Midnight barathea, silk-grosgrain shawl collar, hand-covered buttons. Cut for low light.</p>
+        <div class="meta">
+          <span>Bespoke · 12 weeks</span>
+          <span class="price">from £3,200</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="section-head">
+      <h2>Four rooms.<br><em>One garment.</em></h2>
+      <div class="right">
+        <span class="eyebrow">The Cut</span>
+        We don't make clothes quickly. We make them properly. Here is the path a single jacket takes from your first visit to its final delivery.
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="n">i.</div>
+        <h4>Consultation</h4>
+        <p>An hour in the cutting room. We discuss occasion, posture, cloth and intent. No commitment, no charge.</p>
+        <div class="time">— 60 minutes</div>
+      </div>
+      <div class="step">
+        <div class="n">ii.</div>
+        <h4>Pattern &amp; Baste</h4>
+        <p>Twenty-two measurements taken. A paper pattern is drafted. Your first fitting is in a half-finished garment — held with white thread.</p>
+        <div class="time">— Weeks 1 – 4</div>
+      </div>
+      <div class="step">
+        <div class="n">iii.</div>
+        <h4>Forward Fitting</h4>
+        <p>The garment is sewn down. We refine balance, sleeve pitch, and the line of the lapel. Small corrections, made by hand.</p>
+        <div class="time">— Weeks 5 – 9</div>
+      </div>
+      <div class="step">
+        <div class="n">iv.</div>
+        <h4>Finish &amp; Delivery</h4>
+        <p>Buttonholes cut, lining felled, edges pressed. We deliver in a cotton suit-bag — and we keep your pattern for life.</p>
+        <div class="time">— Weeks 10 – 12</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head">
+      <h2>What we make,<br><em>and what we mend.</em></h2>
+      <div class="right">
+        <span class="eyebrow">Services</span>
+        Beyond the bespoke commission, we offer made-to-measure, restoration, and a full alterations service for garments cut elsewhere.
+      </div>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="svc">
+        <div class="num">— 01</div>
+        <h3>Bespoke<br>Suits</h3>
+        <p>A garment drafted to your pattern alone. Two-piece, three-piece, double-breasted. Cloth from over forty mills.</p>
+        <a class="more" href="#">Read more <span>→</span></a>
+        <div class="from"><span>From</span> <b>£2,850</b></div>
+      </div>
+
+      <div class="svc">
+        <div class="num">— 02</div>
+        <h3>Bespoke<br>Shirts</h3>
+        <p>Two-fold cotton from Albini and Thomas Mason. Hand-attached collars, mother-of-pearl buttons, full canvas cuffs.</p>
+        <a class="more" href="#">Read more <span>→</span></a>
+        <div class="from"><span>From</span> <b>£280</b></div>
+      </div>
+
+      <div class="svc">
+        <div class="num">— 03</div>
+        <h3>Wedding<br>Tailoring</h3>
+        <p>Morning suits, three-piece linen, and the groomsmen's commissions. Begin twelve weeks before the day.</p>
+        <a class="more" href="#">Read more <span>→</span></a>
+        <div class="from"><span>From</span> <b>£3,200</b></div>
+      </div>
+
+      <div class="svc">
+        <div class="num">— 04</div>
+        <h3>Alterations<br>&amp; Restoration</h3>
+        <p>Trousers tapered, jackets re-balanced, a father's suit re-cut for a son. Hand finishing as standard.</p>
+        <a class="more" href="#">Read more <span>→</span></a>
+        <div class="from"><span>From</span> <b>£45</b></div>
+      </div>
+
+      <div class="svc">
+        <div class="num">— 05</div>
+        <h3>Made-to-<br>Measure</h3>
+        <p>Our house block, adjusted to you. Faster than bespoke, fitted by the same hand. Two fittings included.</p>
+        <a class="more" href="#">Read more <span>→</span></a>
+        <div class="from"><span>From</span> <b>£1,400</b></div>
+      </div>
+
+      <div class="svc">
+        <div class="num">— 06</div>
+        <h3>Corporate<br>Programmes</h3>
+        <p>For firms who dress their partners. We come to your office, measure, and deliver in three weeks.</p>
+        <a class="more" href="#">Enquire <span>→</span></a>
+        <div class="from"><span>On</span> <b>Request</b></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Fabric library -->
+<section class="fabrics" id="cloth">
+  <div class="container">
+    <div class="section-head">
+      <h2>Cloth from the great<br><em>mills of Europe.</em></h2>
+      <div class="right">
+        <span class="eyebrow">The Library</span>
+        Over twelve hundred bolts in the room. Worsteds from Huddersfield, flannels from Biella, linens from the Veneto. Bring an idea — leave with a length.
+      </div>
+    </div>
+
+    <div class="fabric-strip">
+      <div class="swatch c-midnight"><span>Midnight Worsted</span></div>
+      <div class="swatch c-charcoal"><span>Charcoal 11oz</span></div>
+      <div class="swatch c-pinstripe"><span>Banker Pinstripe</span></div>
+      <div class="swatch c-navy"><span>Royal Navy</span></div>
+      <div class="swatch c-windowpane"><span>Windowpane</span></div>
+      <div class="swatch c-chalk"><span>Chalk Stripe</span></div>
+      <div class="swatch c-tweed"><span>Donegal Tweed</span></div>
+      <div class="swatch c-bottle"><span>Bottle Hopsack</span></div>
+      <div class="swatch c-houndstooth light"><span style="color: rgba(0,0,0,0.7)">Houndstooth</span></div>
+      <div class="swatch c-cream light"><span>Ivory Linen</span></div>
+      <div class="swatch c-burgundy"><span>Oxblood Velvet</span></div>
+      <div class="swatch c-pinstripe" style="filter: hue-rotate(180deg) brightness(0.9)"><span>Slate Chalk</span></div>
+      <div class="swatch c-charcoal" style="filter: brightness(1.4) sepia(0.2)"><span>Stone Flannel</span></div>
+      <div class="swatch c-midnight" style="filter: hue-rotate(-30deg) brightness(0.7)"><span>Forest Twill</span></div>
+      <div class="swatch c-tweed" style="filter: hue-rotate(40deg) brightness(0.8)"><span>Estate Tweed</span></div>
+      <div class="swatch c-navy" style="filter: brightness(2) saturate(0.3)"><span>Powder Wool</span></div>
+    </div>
+
+    <div class="fabric-foot">
+      <div>
+        <div class="eyebrow" style="margin-bottom: 10px;">House Mills</div>
+        <div class="mills">
+          <div>Holland &amp; Sherry</div>
+          <span>·</span>
+          <div>Loro Piana</div>
+          <span>·</span>
+          <div>Scabal</div>
+          <span>·</span>
+          <div>Fox Brothers</div>
+        </div>
+      </div>
+      <a href="#visit" class="btn btn-ghost">See the full library <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-head">
+      <h2>What our clients<br><em>have said.</em></h2>
+      <div class="right">
+        <span class="eyebrow">Words from the room</span>
+        We are quietly proud of the gentlemen — and ladies — who have trusted us with the occasions of their lives.
+      </div>
+    </div>
+
+    <div class="testi-grid">
+
+      <div class="testi">
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <blockquote>Wajid took the time to understand not just my measurements, but how I move and what I do. The result is the only jacket I now want to wear.</blockquote>
+        <cite><b>Harold W.</b> &nbsp;·&nbsp;  Solicitor, Lincoln's Inn</cite>
+      </div>
+
+      <div class="testi">
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <blockquote>I have had suits cut on Savile Row that were not finished to this standard. A serious house, and a kind one.</blockquote>
+        <cite><b>James M.</b> &nbsp;·&nbsp;  Private Client, Mayfair</cite>
+      </div>
+
+      <div class="testi">
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <blockquote>My wedding morning suit was perfect. Three fittings, no fuss, and a finish that photographed beautifully on the day.</blockquote>
+        <cite><b>Alexander R.</b> &nbsp;·&nbsp;  Married, June 2025</cite>
+      </div>
+
+      <div class="testi">
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <blockquote>The flannel they put me in is the most comfortable suit I own. They cut a London line — not a continental one — and that matters.</blockquote>
+        <cite><b>Dr. Edward C.</b> &nbsp;·&nbsp;  Surgeon, Harley Street</cite>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Visit / Book -->
+<section class="visit" id="visit">
+  <div class="container">
+    <div class="visit-grid">
+
+      <div>
+        <span class="eyebrow" style="color: var(--gold);">Visit the Atelier</span>
+        <h2 style="margin-top: 16px;">Come and be<br><em>measured properly.</em></h2>
+        <p class="lede">
+          Consultations are by appointment, Monday to Saturday. Tea is served. There is no obligation, and the conversation alone is worthwhile.
+        </p>
+
+        <div class="visit-details">
+          <div class="vd">
+            <div class="lbl">The Atelier</div>
+            <div class="val">
+              14 Conduit Street<br>
+              <span>Mayfair, London W1S 2XX</span>
+            </div>
+          </div>
+          <div class="vd">
+            <div class="lbl">Opening Hours</div>
+            <div class="val">
+              Mon – Fri, 10 – 6<br>
+              <span>Saturday by appointment</span>
+            </div>
+          </div>
+          <div class="vd">
+            <div class="lbl">Telephone</div>
+            <div class="val">
+              <a href="tel:+447951572853">+44 7951 572 853</a><br>
+              <span>WhatsApp welcome</span>
+            </div>
+          </div>
+          <div class="vd">
+            <div class="lbl">Master Tailor</div>
+            <div class="val">
+              Wajid<br>
+              <span>Founder &amp; Head Cutter</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-card">
+        <span class="eyebrow">Request an appointment</span>
+        <h3>Reserve your<br>first fitting.</h3>
+        <p>Leave us a few details. We will reply within one working day to confirm a time that suits.</p>
+
+        <form class="form" onsubmit="event.preventDefault(); this.querySelector('.btn').textContent = 'Thank you — we will be in touch'; this.querySelector('.btn').style.background = 'var(--gold-deep)'; this.querySelector('.btn').style.borderColor = 'var(--gold-deep)'; this.querySelector('.btn').style.color = '#fff';">
+          <div class="field">
+            <label>Your Name</label>
+            <input type="text" placeholder="Mr. John Smith" required>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label>Telephone</label>
+              <input type="tel" placeholder="+44 …" required>
+            </div>
+            <div class="field">
+              <label>Email</label>
+              <input type="email" placeholder="you@…" required>
+            </div>
+          </div>
+          <div class="field">
+            <label>Commission</label>
+            <select>
+              <option>Bespoke two-piece</option>
+              <option>Bespoke three-piece</option>
+              <option>Wedding tailoring</option>
+              <option>Dinner suit / black tie</option>
+              <option>Bespoke shirts</option>
+              <option>Alterations</option>
+              <option>Just to talk</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Request <span class="arrow">→</span></button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="brand-big">U<span class="amp">·</span>K TAILORING</div>
+        <p>A small London tailoring house, cutting bespoke garments for private clients since 2014. By appointment only.</p>
+      </div>
+      <div>
+        <h5>House</h5>
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">The Cutter</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Journal</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#">Bespoke Suits</a></li>
+          <li><a href="#">Wedding</a></li>
+          <li><a href="#">Alterations</a></li>
+          <li><a href="#">Corporate</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:+447951572853">+44 7951 572 853</a></li>
+          <li><a href="mailto:atelier@uktailoring.co.uk">atelier@uktailoring.co.uk</a></li>
+          <li>14 Conduit Street</li>
+          <li>Mayfair, London W1S</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <div>© 2026 UK Tailoring Ltd. · Registered in England &amp; Wales</div>
+      <div>By appointment only · Closed Sundays</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
